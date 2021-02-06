@@ -7,39 +7,39 @@ import java.util.Scanner;
 public class Person {
 
 	
-	//ÀÌ¸§
+	//ì´ë¦„
 	String name;
-	//³ªÀÌ
+	//ë‚˜ì´
 	int age;
-	//ÁÖ¹Îµî·Ï¹øÈ£
-	//-Á¦¿Ü
+	//ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸
+	//-ì œì™¸
 	int[] identifier=new int[13];
-	//¼ºº°
+	//ì„±ë³„
 	char gender;
-	//Â¦¼ö´Â ¿©ÀÚ, È¦¼ö´Â ³²ÀÚ
+	//ì§ìˆ˜ëŠ” ì—¬ì, í™€ìˆ˜ëŠ” ë‚¨ì
 	
-	//°ÅÁÖÁö
+	//ê±°ì£¼ì§€
 	String addr;
 	
 	
-	//1ÀÏ ´ÜÀ§·Î °¨·®±â·Ï
-		//1ÁÖÀÏ ´ÜÀ§·Î ÃßÃµ
+	//1ì¼ ë‹¨ìœ„ë¡œ ê°ëŸ‰ê¸°ë¡
+		//1ì£¼ì¼ ë‹¨ìœ„ë¡œ ì¶”ì²œ
 	Calendar start=Calendar.getInstance();
 	Calendar temp=(Calendar) start.clone();//calnedar implements cloneable, serialization
-	Calendar temp2=(Calendar) start.clone();//1ÁÖÀÏ ÈÄ ¿ëµµ
-	//°¡ÀÔ¿¬µµ(1³â¸¶´Ù ³ªÀÌ¸¦ Áõ°¡½ÃÅ°±â À§ÇÔ)->°Çµå¸± ÇÊ¿ä°¡ ¾øÀ½
+	Calendar temp2=(Calendar) start.clone();//1ì£¼ì¼ í›„ ìš©ë„
+	//ê°€ì…ì—°ë„(1ë…„ë§ˆë‹¤ ë‚˜ì´ë¥¼ ì¦ê°€ì‹œí‚¤ê¸° ìœ„í•¨)->ê±´ë“œë¦´ í•„ìš”ê°€ ì—†ìŒ
 	int signYr=start.get(Calendar.YEAR);
-	//°¡ÀÔ¿ù
+	//ê°€ì…ì›”
 	int signMon=start.get(Calendar.MONTH)+1;//0~11
-	//°¡ÀÔÀÏ
+	//ê°€ì…ì¼
 	int signDay=start.get(Calendar.DAY_OF_MONTH);
-	//°¡ÀÔ¿äÀÏ
-	int signDateTemp=start.get(Calendar.DAY_OF_WEEK)-1;//1~7:ÀÏ~Åä->¹è¿­À» ÀÌ¿ëÇÏ±â À§ÇØ -1ÇÏ±â!
+	//ê°€ì…ìš”ì¼
+	int signDateTemp=start.get(Calendar.DAY_OF_WEEK)-1;//1~7:ì¼~í† ->ë°°ì—´ì„ ì´ìš©í•˜ê¸° ìœ„í•´ -1í•˜ê¸°!
 	
 	
 	/*
-	 * way 1 ¿äÀÏ ¹è¿­À» ¸¸µé¾îµÎ°í ÀÌ¸¦ °ªÀ¸·Î ³Ñ±â±â
-	 * way 2 switch-case(½Ã°£º¹Àâµµ °í·ÁÇÒ ÇÊ¿ä ÀÖÀ» µí(È®ÀÎ ÇÊ¿ä))
+	 * way 1 ìš”ì¼ ë°°ì—´ì„ ë§Œë“¤ì–´ë‘ê³  ì´ë¥¼ ê°’ìœ¼ë¡œ ë„˜ê¸°ê¸°
+	 * way 2 switch-case(ì‹œê°„ë³µì¡ë„ ê³ ë ¤í•  í•„ìš” ìˆì„ ë“¯(í™•ì¸ í•„ìš”))
 	 */
 	String[] sDay= {"SUN","MON","TUE","WED","THU","FRI","SAT"};
 	String signDate=sDay[signDateTemp];
@@ -106,46 +106,46 @@ public class Person {
 	}
 	
 	/*Update*/
-	//°¨·® ¹«°Ô(1ÀÏ°£°İÀ¸·Î ¾÷µ¥ÀÌÆ®)
+	//ê°ëŸ‰ ë¬´ê²Œ(1ì¼ê°„ê²©ìœ¼ë¡œ ì—…ë°ì´íŠ¸)
 	public void updateRedWeight()
 	{
 		String tmp;
-		//¾Ë¶÷ or Àç¾Ë¶÷ È®ÀÎ
+		//ì•ŒëŒ or ì¬ì•ŒëŒ í™•ì¸
 		(this).ReAlarm();
 		if((((Calendar.getInstance().getTimeInMillis()-temp.getTimeInMillis())/1000)/(60*60*24))==1)
 		{
-			//1ÀÏ °æ°ú¸¶´Ù
-			System.out.println("¸î kg¸¦ °¨·®ÇÏ¿´´ÂÁö ÀÔ·ÂÇØÁÖ¼¼¿ä(¿¹: 1)");
+			//1ì¼ ê²½ê³¼ë§ˆë‹¤
+			System.out.println("ëª‡ kgë¥¼ ê°ëŸ‰í•˜ì˜€ëŠ”ì§€ ì…ë ¥í•´ì£¼ì„¸ìš”(ì˜ˆ: 1)");
 			tmp=new Scanner(System.in).nextLine();
 			this.f1.redWeight=Double.parseDouble(tmp);
-			this.d1.weight-=this.f1.redWeight;//Ã¼Áß °»½Å
+			this.d1.weight-=this.f1.redWeight;//ì²´ì¤‘ ê°±ì‹ 
 			
 		}
 		else
 		{
-			System.out.println("¾ÆÁ÷ ¾÷µ¥ÀÌÆ® µÇÁö ¾Ê¾Ò½À´Ï´Ù!(1ÀÏ °£°İÀ¸·Î ¾÷µ¥ÀÌÆ®ÇØÁÖ¼¼¿ä)");
+			System.out.println("ì•„ì§ ì—…ë°ì´íŠ¸ ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!(1ì¼ ê°„ê²©ìœ¼ë¡œ ì—…ë°ì´íŠ¸í•´ì£¼ì„¸ìš”)");
 		}
-		System.out.println("ÇöÀç Ã¼Áß: "+this.d1.weight+"kg, °¨·® Ã¼Áß(ÀüÀÏ ´ëºñ): "+this.f1.redWeight+" kg");
-		//temp °»½Å(Â÷ÀÌ¸¦ Ç×»ó º¯°æÇÏ¸é¼­ °üÂû)
+		System.out.println("í˜„ì¬ ì²´ì¤‘: "+this.d1.weight+"kg, ê°ëŸ‰ ì²´ì¤‘(ì „ì¼ ëŒ€ë¹„): "+this.f1.redWeight+" kg");
+		//temp ê°±ì‹ (ì°¨ì´ë¥¼ í•­ìƒ ë³€ê²½í•˜ë©´ì„œ ê´€ì°°)
 		temp.add(temp.DATE, 1);
 		
 		
 	}
-	//1ÁÖÀÏ ´ÜÀ§·Î ÃßÃµ(½Ä´Ü, ¿îµ¿)
+	//1ì£¼ì¼ ë‹¨ìœ„ë¡œ ì¶”ì²œ(ì‹ë‹¨, ìš´ë™)
 	public void updateRecommendation()
 	{
 		ReAlarm();
 		if((((Calendar.getInstance().getTimeInMillis()-temp2.getTimeInMillis())/1000)/(60*60*24))==7)
 		{
-			//7ÀÏ °æ°ú¸¶´Ù
-			System.out.println("==[Update]ÀÌ¹øÁÖ ÃßÃµ ½Ä´Ü==");
+			//7ì¼ ê²½ê³¼ë§ˆë‹¤
+			System.out.println("==[Update]ì´ë²ˆì£¼ ì¶”ì²œ ì‹ë‹¨==");
 			this.f1.SetMenu();
 			for(String i:this.f1.GetMenu())
 			{
 				System.out.println(i);
 			}
 			System.out.println();
-			System.out.println("==[Update]ÀÌ¹øÁÖ ÃßÃµ ·çÆ¾==");
+			System.out.println("==[Update]ì´ë²ˆì£¼ ì¶”ì²œ ë£¨í‹´==");
 			this.d1.SetRout();
 			for(String i:this.d1.GetRout())
 			{
@@ -155,9 +155,9 @@ public class Person {
 		}
 		else
 		{
-			System.out.println("¾ÆÁ÷ 1ÁÖÀÏÀÌ °æ°úµÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+			System.out.println("ì•„ì§ 1ì£¼ì¼ì´ ê²½ê³¼ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			System.out.println();
-			System.out.println("==[ÀÌ¹øÁÖ]½Ä´Ü ==");
+			System.out.println("==[ì´ë²ˆì£¼]ì‹ë‹¨ ==");
 			this.f1.SetMenu();
 			this.d1.SetRout();
 			for(String i:this.f1.GetMenu())
@@ -165,14 +165,14 @@ public class Person {
 				System.out.println(i);
 			}
 			System.out.println();
-			System.out.println("==[ÀÌ¹øÁÖ]·çÆ¾ ==");
+			System.out.println("==[ì´ë²ˆì£¼]ë£¨í‹´ ==");
 			for(String i:this.d1.GetRout())
 			{
 				System.out.println(i);
 			}
 			System.out.println();
 		}
-		//temp °»½Å(Â÷ÀÌ¸¦ Ç×»ó º¯°æÇÏ¸é¼­ °üÂû)
+		//temp ê°±ì‹ (ì°¨ì´ë¥¼ í•­ìƒ ë³€ê²½í•˜ë©´ì„œ ê´€ì°°)
 		temp2.add(temp2.DATE, 7);
 		
 	}
@@ -181,11 +181,11 @@ public class Person {
 		int AlarmCall=0;
 		if(AlarmCall==0)
 		{
-			System.out.println("[µû²öµû²ö!]");
+			System.out.println("[ë”°ëˆë”°ëˆ!]");
 		}
 		else if(AlarmCall>0)
 		{
-			System.out.println("[´Ù½Ã¾Ë¸²]");
+			System.out.println("[ë‹¤ì‹œì•Œë¦¼]");
 		}
 		AlarmCall++;
 	}
@@ -195,34 +195,35 @@ public class Person {
 		//Diet d=new Diet();
 		//Food f=new Food();
 		
-		System.out.println("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		System.out.println("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		p.name=new Scanner(System.in).nextLine();
 		
-		System.out.println("³ªÀÌ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		System.out.println("ë‚˜ì´ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		p.age=new Scanner(System.in).nextInt();
 		
-		System.out.println("ÁÖ¹Îµî·Ï¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(¿¹:1234567890123)");
+		System.out.println("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(ì˜ˆ:1234567890123)");
 		String tmp=new Scanner(System.in).nextLine();
 		for(int i=0;i<tmp.length();i++)
 		{
 			p.identifier[i]=tmp.charAt(i)-'0';
 		}
 		
-		System.out.println("°ÅÁÖÁö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		System.out.println("ê±°ì£¼ì§€ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		tmp=new Scanner(System.in).nextLine();
 		p.addr=tmp;
 		
 		
-		System.out.println("½ÅÀå(Å°)À» ÀÔ·ÂÇØÁÖ¼¼¿ä(´ÜÀ§: cm)");
+		System.out.println("ì‹ ì¥(í‚¤)ì„ ì…ë ¥í•´ì£¼ì„¸ìš”(ë‹¨ìœ„: cm)");
 		tmp=new Scanner(System.in).nextLine();
 		p.d1.height=Double.parseDouble(tmp);
 		
-		System.out.println("Ã¼Áß(¸ö¹«°Ô)À» ÀÔ·ÂÇØÁÖ¼¼¿ä(´ÜÀ§: kg)");
+		System.out.println("ì²´ì¤‘(ëª¸ë¬´ê²Œ)ì„ ì…ë ¥í•´ì£¼ì„¸ìš”(ë‹¨ìœ„: kg)");
 		tmp=new Scanner(System.in).nextLine();
 		p.d1.weight=Double.parseDouble(tmp);
-		System.out.println("[°³ÀÎÁ¤º¸]ÀÌ¸§: "+p.GetName()+", ³ªÀÌ: "
-				+ p.GetAge()+"¼¼, ¼ºº°: "+p.GetGender()+", ÁÖ¼Ò: "+p.GetAddr());
-		System.out.println("ÁÖ¹Îµî·Ï¹øÈ£: ");
+		System.out.println("[ê°œì¸ì •ë³´]ì´ë¦„: "+p.GetName()+", ë‚˜ì´: "
+				+ p.GetAge()+"ì„¸, ì„±ë³„: "+p.GetGender()+", ì£¼ì†Œ: "+p.GetAddr()+" ,ì‹ ì¥: "+
+				p.d1.GetHeight()+" cm, ì²´ì¤‘: "+p.d1.GetWeight()+" kg, BMI: "+p.d1.GetBmi()+"kg/m^2");
+		System.out.println("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸: ");
 		String[] iden=p.GetIdentifier();
 		
 		for(int i=0;i<iden.length;i++)
@@ -230,17 +231,17 @@ public class Person {
 			System.out.printf("%s",iden[i]);
 		}
 		System.out.println();
-		System.out.println("°¡ÀÔÀÏ: ");
+		System.out.println("ê°€ì…ì¼: ");
 		String[] dOrigin=p.GetOriginDate();
 		for(int i=0;i<dOrigin.length;i++)
 		{
 			System.out.printf("%s", dOrigin[i]);
 		}
 		System.out.println();
-		/*update ÇÏ¸é¼­ ÀÚµ¿À¸·Î ½Ä´Ü ¹× ÇöÀç Ã¤Áß¶÷·® ¾Ë·ÁÁÜ*/
-		//1ÀÏ ´ÜÀ§·Î °¨·®±â·Ï
+		/*update í•˜ë©´ì„œ ìë™ìœ¼ë¡œ ì‹ë‹¨ ë° í˜„ì¬ ì±„ì¤‘ëŒëŸ‰ ì•Œë ¤ì¤Œ*/
+		//1ì¼ ë‹¨ìœ„ë¡œ ê°ëŸ‰ê¸°ë¡
 		p.updateRedWeight();
-		//1ÁÖÀÏ ´ÜÀ§·Î ÃßÃµ
+		//1ì£¼ì¼ ë‹¨ìœ„ë¡œ ì¶”ì²œ
 		p.updateRecommendation();
 		
 		
